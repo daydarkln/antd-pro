@@ -19,7 +19,7 @@ type LoginType = 'phone' | 'account';
 
 export default () => {
   const { token } = theme.useToken();
-  const [loginType, setLoginType] = useState<LoginType>('phone');
+  const [loginType, setLoginType] = useState<LoginType>('account');
 
   const iconStyles: CSSProperties = {
     marginInlineStart: '16px',
@@ -33,8 +33,7 @@ export default () => {
       <div style={{ backgroundColor: token.colorBgContainer }}>
         <LoginForm
           // logo="https://github.githubassets.com/images/modules/logos_page/Octocat.png"
-          title="Github"
-          subTitle="Самая большая в мире платформа для хостинга кода"
+          title="App Boarding"
           actions={
             <Space>
               Другие способы входа

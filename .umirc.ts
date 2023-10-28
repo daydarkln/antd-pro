@@ -11,8 +11,16 @@ export default defineConfig({
   },
   routes: [
     {
+      path: '/login',
+      name: 'Логин',
+      component: './Login',
+      layout: false,
+    },
+    {
       path: '/employee',
       name: 'Сотрудник',
+      access: 'isEmployeeAuthorized',
+      redirect: '/login',
       routes: [
         {
           path: '/employee/login',
@@ -24,17 +32,12 @@ export default defineConfig({
     {
       path: '/',
       name: 'Менеджер',
+      access: 'canSeeAdmin',
       routes: [
         {
           path: '/add-company',
           name: 'Добавить компанию',
           component: './CompanyRegistration',
-        },
-        {
-          path: '/login',
-          name: 'Логин',
-          component: './Login',
-          layout: false,
         },
         {
           name: 'Главная страница',
@@ -50,6 +53,11 @@ export default defineConfig({
           name: 'Пример CRUD',
           path: '/table',
           component: './Table',
+        },
+        {
+          path: '/add-employee',
+          name: 'Добавить сотрудника',
+          component: './EmployeeRegistration',
         },
       ],
     },
