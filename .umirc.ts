@@ -9,6 +9,9 @@ export default defineConfig({
   layout: {
     title: '@umijs/max',
   },
+  locale: {
+    default: 'en-US',
+  },
   routes: [
     {
       path: '/',
